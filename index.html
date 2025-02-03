@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Sakura</title>
+    <style>
+        body {
+            overflow: hidden;
+            font-family: 'Press Start 2P', cursive;
+            background-color: #e0d3b8; /* Stardew Valley parchment-like background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: #fff5e1; /* Light parchment color */
+            border: 8px solid #6b4f3a; /* Wooden frame */
+            border-radius: 20px;
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: linear-gradient(45deg, #ffcc80, #ff8c66); /* Warm gradient */
+            z-index: -1;
+            border-radius: 30px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #6b4f3a; /* Dark brown for text */
+            text-shadow: 2px 2px 0 #ffcc80; /* Stardew Valley-style text shadow */
+        }
+
+        p {
+            font-size: 14px;
+            color: #4a3a2a; /* Slightly lighter brown for text */
+            line-height: 1.6;
+        }
+
+        .portrait {
+            width: 256px;
+            height: 256px;
+            background-image: url('images/portraitback.png'); /* Update this path */
+            background-size: cover;
+            margin: 20px auto;
+            border: 4px solid #6b4f3a;
+            border-radius: 10px;
+            background-color: #f0e4d3; /* Light parchment background for portrait */
+        }
+
+        .signature {
+            font-size: 12px;
+            color: #6b4f3a;
+            margin-top: 20px;
+            font-style: italic; /* Handwritten feel */
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center; /* Center buttons */
+            gap: 12px; /* Adds space between buttons */
+            flex-wrap: wrap; /* Ensures buttons wrap properly on smaller screens */
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            padding: 12px 15px; /* Increased padding for better touch area */
+            background-color: #6b4f3a; /* Wooden button color */
+            color: #fff;
+            border: 2px solid #4a3a2a; /* Darker border for depth */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 120px; /* Increased width to fit text properly */
+        }
+
+        .button:hover {
+            background-color: #4a3a2a; /* Darker on hover */
+            transform: scale(1.05);
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffcc80; /* Golden confetti */
+            border-radius: 50%;
+            animation: confetti-fall 2s infinite;
+        }
+
+        .confetti:nth-child(1) {
+            top: -10px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .confetti:nth-child(2) {
+            top: -10px;
+            left: 30%;
+            animation-delay: 0.5s;
+        }
+
+        .confetti:nth-child(3) {
+            top: -10px;
+            left: 50%;
+            animation-delay: 1s;
+        }
+
+        .confetti:nth-child(4) {
+            top: -10px;
+            left: 70%;
+            animation-delay: 1.5s;
+        }
+
+        .confetti:nth-child(5) {
+            top: -10px;
+            left: 90%;
+            animation-delay: 2s;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(500px) rotate(360deg);
+            }
+        }
+
+        /* New style for the "Click me last" text */
+        .click-last {
+            font-size: 12px;
+            color: #6b4f3a;
+            margin-top: 20px;
+            cursor: pointer;
+            text-decoration: underline;
+            font-style: italic; /* Handwritten feel */
+        }
+
+        .click-last:hover {
+            color: #4a3a2a;
+        }
+
+        /* Stardew Valley-themed pixel art border */
+        .card::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYSURBVDhPY2AYBaOAAQcYGBgY/gMxIwUYABgAAB4AAT4AAAAASUVORK5CYII='); /* Pixel art border */
+            background-repeat: repeat;
+            z-index: -1;
+            border-radius: 30px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="card">
+        <h1>Happy Birthday!</h1>
+        <div class="portrait"></div>
+        <p>
+            Happy Birthday to Sammy! Wishing you all the best as always, but why do I consider you one of the greatest people I have had the honor of meeting?
+        </p>
+        <p class="signature">- From Andrew (Click below!) </p>
+
+        <!-- Buttons -->
+        <div class="buttons">
+            <a href="kind.html" class="button">1</a>
+            <a href="strong.html" class="button">2</a>
+            <a href="artistic.html" class="button">3</a>
+            <a href="colorful.html" class="button">4</a>
+        </div>
+
+        <!-- New "Click me last" text -->
+        <a href="video.html" class="click-last">Click me last</a>
+
+        <!-- Confetti -->
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+    </div>
+
+</body>
+</html>
